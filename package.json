@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "name": "slack-activity",
+  "scripts": {
+    "deploy:f": "sls deploy function -f app",
+    "deploy:all": "sls deploy",
+    "tail": "sls logs -f app -t --startTime 30m",
+    "fix": "run-p fix:*",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:prettier": "npm run lint:prettier -- --write",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint --ext js,ts .",
+    "lint:prettier": "prettier -l \"**/*.{json,md,yml}\"",
+    "lint:type": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@serverless/typescript": "^2.35.0",
+    "@types/aws-lambda": "^8.10.75",
+    "@types/node": "^12",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "serverless": "^2.35.0",
+    "serverless-esbuild": "^1.10.2",
+    "ts-loader": "^8.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.33.2",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "@slack/web-api": "^6.1.0",
+    "aws-sdk": "^2.888.0",
+    "source-map-support": "^0.5.19"
+  },
+  "engines": {
+    "node": "= 12",
+    "yarn": ">= 1.22"
+  }
+}

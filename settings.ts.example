@@ -1,0 +1,6 @@
+export const settings = {
+  awsProfile: '',
+  slackSigningSecret: '',
+  slackBotToken: '',
+  slackChannel: '#slack_activity',
+}

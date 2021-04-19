@@ -57,9 +57,9 @@ function channelEmojiText(eventBody: EventBody): string {
 }
 
 async function postMessage(text: string): Promise<void> {
-  if (!process.env.SLACL_CHANNEL) throw Error('process.env.SLACL_CHANNEL is unset.')
+  if (!process.env.SLACK_CHANNEL) throw Error('process.env.SLACK_CHANNEL is unset.')
   const options: ChatPostMessageArguments = {
-    channel: process.env.SLACL_CHANNEL,
+    channel: process.env.SLACK_CHANNEL,
     text: text,
   }
   await web.chat.postMessage(options)

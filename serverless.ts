@@ -20,7 +20,7 @@ const serverlessConfiguration: AWS = {
     environment: {
       SLACK_SIGNING_SECRET: settings.slackSigningSecret,
       SLACK_BOT_TOKEN: settings.slackBotToken,
-      SLACL_CHANNEL: settings.slackChannel,
+      SLACK_CHANNEL: settings.slackChannel,
     },
     lambdaHashingVersion: '20201221',
   },
